@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0A0B0D" />
+    <title>Mi Propia Pista</title>
+    <meta name="description" content="El archivo de Mi Propia Pista, un cortometraje de Juan Daniel Bermúdez." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Este sitio necesita JavaScript.</noscript>
+    <script>
+      // Si la aplicación no llega a mostrarse, se explica el motivo en vez de dejar la pantalla vacía.
+      (function () {
+        var shown = false;
+        function fail(msg) {
+          var root = document.getElementById('root');
+          if (shown || !root || root.children.length) return;
+          shown = true;
+          root.innerHTML = '<div style="min-height:100vh;display:grid;place-items:center;padding:24px;font:16px system-ui;color:#ECE8E1;background:#0A0B0D;text-align:center"><div style="max-width:460px"><p style="font-size:22px;margin:0 0 12px">La página no pudo iniciarse.</p><p style="color:#9A968F;margin:0">' + msg + '</p></div></div>';
+        }
+        window.addEventListener('error', function (e) { setTimeout(function () { fail('Error: ' + (e && e.message ? e.message : 'desconocido') + '. Prueba con Chrome o Edge actualizados.'); }, 0); });
+        setTimeout(function () { fail('Prueba abrirla con Chrome o Edge actualizados, o con «Go Live» en VS Code.'); }, 8000);
+      })();
+    </script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
